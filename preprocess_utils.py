@@ -1,7 +1,7 @@
 import pandas as pd
 import numpy as np
 
-from sklearn.preprocessing import LabelEncoder
+from sklearn.preprocessing import LabelEncoder, OneHotEncoder
 from sklearn.impute import SimpleImputer
 from sklearn.preprocessing import MinMaxScaler, StandardScaler
 from sklearn.model_selection import train_test_split
@@ -22,10 +22,8 @@ def encoding(df, unique_categ=2):
     # Iterate through the columns
     for col in df:
         if df[col].dtype == 'object':
-          # Label encode columns with unique categories < unique_categ
-          if len(list(df[col].unique())) <= unique_categ:
-            # Train & transform the data
-            le.fit(df[col])
+          if len(list(df[col].unique())) <= unique_categ: # Label encode columns with unique categories < unique_categ
+            le.fit(df[col]) # Train & transform the data
             df[col] = le.transform(df[col])
             # Keep track of how many columns were label encoded
             le_count += 1
@@ -34,13 +32,24 @@ def encoding(df, unique_categ=2):
 
     print('%d columns were label encoded.' % le_count)
 
-    # one-hot encoding of categorical variables
-    col_to_one_hot = df.select_dtypes(include='object').columns
     tmp_shape = df.shape[1]
-    df = pd.get_dummies(df)
+
+    # one-hot encoding of categorical variables
+    cat_df = df.select_dtypes(include='object')
+
+    oh = OneHotEncoder(handle_unknown='ignore', sparse=False)
+    oh.fit(cat_df)
+    values = oh.transform(cat_df)
+
+    cat_df_oh = pd.DataFrame(data = values.astype('int'), columns=oh.get_feature_names_out())
+    cat_df_oh.drop(cat_df_oh.columns[cat_df_oh.columns.str.contains('nan')], axis=1, inplace=True) # The one hot considers the value 'nan' as a category, we delete them
+
+    df.drop(cat_df.columns, axis=1, inplace=True) # We remove the object features
+    df = pd.concat([df, cat_df_oh], axis=1) # We add the one hot-encoded features
+
     print(f'{df.shape[1] - tmp_shape} columns were one-hot encoded.')
 
-    return df, col_to_le, col_to_one_hot
+    return df, col_to_le, oh
 
 def handle_nans(df, imput=SimpleImputer, strategy='median', **params_imputer):
     
