@@ -64,10 +64,10 @@ def display_intro_page():
     st.markdown('## How to use it ?')
     st.markdown('<p style="font-size: 20px">To begin, you have to choose on the sidebar a database to work with, by default you can find two already available (Paris and Marseille\'s clients).\
         <br>It is also possible to import a custom database, an expander at the bottom is available.<br>\
-        Main informations on the database are displayed automatically.</p>', True)
+        Main informations on the database are displayed automatically when clicking on it.</p>', True)
     st.markdown('<p style="font-size: 20px">To predict the score of a specific client, you have to choose the client ID.\
         To better understand the score, you can compare some informations of the client versus the values of all the others clients.<br>\
-        The multiselect bow allows you to chose which features to compare</p>', True)
+        The multiselect bow allows you to chose which features to compare.</p>', True)
 
     st.markdown('## Some information before you go !')
 
