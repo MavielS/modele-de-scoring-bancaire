@@ -7,7 +7,7 @@
 
 *.csv
 !sample_train.csv
-fastapi/deployment_env
+web-app/deployment_env
 data
 
 # Byte-compiled / optimized / DLL files
