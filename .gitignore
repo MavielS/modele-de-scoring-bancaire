@@ -6,6 +6,7 @@
 *.pkl
 
 *.csv
+!sample_train.csv
 fastapi/deployment_env
 data
 
