@@ -7,7 +7,7 @@
 
 *.csv
 !sample_train.csv
-web-app/deployment_env
+web-app/deployment_venv
 data
 
 # Byte-compiled / optimized / DLL files
