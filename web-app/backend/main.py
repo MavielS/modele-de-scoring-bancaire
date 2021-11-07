@@ -19,7 +19,7 @@ async def predict_client(request: Request):
     json_data = json.loads(received)
     client = pd.DataFrame(data=np.array(list(json_data.values())).reshape(1,-1), columns=list(json_data.keys()))
 
-    to_change_type = pd.read_csv('./frontend/application_test.csv') # Load examples to have to right 
+    to_change_type = pd.read_csv('./backend/sample.csv') # Load examples to have to right 
 
     # Changing type to make it corresponds to the type of the value seen during fit
     for col in client.columns:
@@ -60,6 +60,6 @@ async def predict_client(request: Request):
 #     return to_post
 
 if __name__ == "__main__":
-    uvicorn.run("main:app", reload=True, host="0.0.0.0", port=8080)
+    uvicorn.run("main:app", reload=False, host="0.0.0.0", port=8080)
 
     

@@ -31,7 +31,7 @@ from front_func import *
 # --- set variables in session state ---
 
 if 'db_train' not in st.session_state:
-    st.session_state.db_train = fetch_train('frontend/sample_train.csv') # Load a sample of the train set
+    st.session_state.db_train = fetch_train('sample_train.csv') # Load a sample of the train set
 
 if 'intro_page' not in st.session_state:
     st.session_state.intro_page = 0

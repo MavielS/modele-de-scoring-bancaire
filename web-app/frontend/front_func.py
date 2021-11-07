@@ -19,8 +19,8 @@ import json
 
 # Some constants
 THRESHOLD_MODEL = 0.45
-PATH_CSV = 'frontend/application_test.csv'
-PATH_ICON = 'frontend/icon.png'
+PATH_CSV = 'application_test.csv'
+PATH_ICON = 'icon.png'
 SIZE_PARIS = 10000
 SIZE_MARSEILLE = 7000
 
@@ -29,6 +29,8 @@ cmap=LinearSegmentedColormap.from_list('rg',['#12c43a', 'w',  '#e23f3f'], N=256)
 colors = ['#12c43a', '#e23f3f'] # Red - Green
 paper_color = '#0e1117' ; plot_color = '#32363E' # Color of streamlit bg
 font_color = 'white' ; font_family='Lato' ; font_size=20
+
+url_prediction = 'http://fastapi:8080'
 
 
 # --- Get infos --- #
@@ -42,7 +44,7 @@ def fetch_data(path, n_rows=1):
 
 def get_prediction_client(df):
     to_send = df.to_json()
-    res = requests.post(f"http://localhost:8080/predict_client", json=to_send)
+    res = requests.post(url_prediction + '/predict_client', json=to_send)
     return res
 
 
