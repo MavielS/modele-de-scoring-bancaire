@@ -20,7 +20,7 @@ Par la suite, j'ai pu déployer ce modèle sous forme d'une API exploitée par u
 Vous pouvez trouver ici 3 notebooks:
 1. *EDA_and_1st_modelling* constitue la découverte du jeu de données ainsi qu'une première modélisation 'naive'
 2. *Features_Engineering* constitue une seconde approche plus poussée dans la modélisation incluant la gestion du déséquilibre des classes, la crétation d'une métrique métier et l'optimisation du score grâce à l'ajout et la suppression de variables.
-3. *Model_interpration* contient une analyse locale et globale du modèle retenu
+3. *Model_interpretation* contient une analyse locale et globale du modèle retenu
 
 *rf_objects* contient les objets exportés à la fin du notebook *Features_Engineering*.
 
