@@ -16,7 +16,7 @@ L'objectif était de développer pour la société « Prêt à Dépenser », une
 
 Par la suite, j'ai pu déployer ce modèle sous forme d'une API exploitée par une interface web interactive.
 
-Retrouvez ici une [présentation vidéo du dashboard](https://youtu.be/5cIWq9iiQWM).
+Retrouvez ici une [présentation vidéo du dashboard](https://youtu.be/flV-HBf5Hdw).
 
 # Fichiers disponibles
 
