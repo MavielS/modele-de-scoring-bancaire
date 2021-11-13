@@ -3,7 +3,7 @@ Le code utilisé pour le frontend et le backend est disponible sur mon github [i
 
 <p align='center';">
   <b>Retrouvez le résultat final
-    <a href="bank-scoring-ui.herokuapp.com/">ici</a> !
+    <a href="https://bank-scoring-api.herokuapp.com/">ici</a> !
   </b>
 </p> 
 
