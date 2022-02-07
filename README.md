@@ -8,6 +8,13 @@ Le code utilisé pour le frontend et le backend est disponible sur mon github [i
   <i>(Le chargement de la page peut prendre jusqu'à 30s si le serveur n'a pas été utilisé depuis un moment.)</i>
 </p> 
 
+<p align='center';">
+  <b>Retrouvez
+    <a href="https://youtu.be/flV-HBf5Hdw">ici une présentation vidéo du dashboard</a> ! </br>
+  </b>
+</p> 
+                                                    
+
 
 # Présentation du projet 
 
@@ -16,7 +23,6 @@ L'objectif était de développer pour la société « Prêt à Dépenser », une
 
 Par la suite, j'ai pu déployer ce modèle sous forme d'une API exploitée par une interface web interactive.
 
-Retrouvez ici une [présentation vidéo du dashboard](https://youtu.be/flV-HBf5Hdw).
 
 # Fichiers disponibles
 
